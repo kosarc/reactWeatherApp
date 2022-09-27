@@ -1,38 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500&display=swap");
 .App {
-  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 100px;
+  font-family: "Nunito", sans-serif;
+  color: #707579;
+}
+.App .temp {
+  line-height: 80%;
+  color: #2d2d2d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App li {
+  list-style: none;
+  padding-left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App .units {
+  position: relative;
+  left: 30px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App .forecast-value {
+  font-weight: bold;
+}
+.App .weather-description {
+  font-size: 18px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-weight: bold;
+  line-height: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.App i {
+  margin: 40px auto;
+  color: #707579;
+  font-size: 100px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App .description-icon {
+  height: 140px;
+}
+.App .symbol {
+  text-decoration: none;
+  color: #0d6efd;
 }
