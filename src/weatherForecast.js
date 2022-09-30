@@ -9,6 +9,7 @@ function WeatherForecast(props) {
   useEffect(() => {
     setReady(false);
   }, [props.info]);
+
   let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
   function handleRespone(respone) {
@@ -17,7 +18,7 @@ function WeatherForecast(props) {
     console.log(respone);
   }
 
-  if (ready) {
+  if (ready && props.conversion === "celsius") {
     return (
       <div className="WeatherForecast">
         {temp.map(function (value, index) {
@@ -48,20 +49,60 @@ function WeatherForecast(props) {
       </div>
     );
   } else {
-    const apiKey = "21cf52b64168334a0b71f4d075758440";
-    let lon = props.info.lon;
-    let lat = props.info.lat;
-    console.log(lon);
-    console.log(lat);
-    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleRespone);
-    return (
-      <div className="WeatherForecast">
-        <div>
-          <i className="fa-solid fa-spinner fa-spin"></i>
+    if (ready && props.conversion === "fahrenheit") {
+      return (
+        <div className="WeatherForecast">
+          {temp.map(function (value, index) {
+            let date = new Date(value.dt * 1000);
+            let dayDate = date.getDate();
+            if (dayDate < 10) {
+              dayDate = `0${dayDate}`;
+            }
+            let localTime = props.timezone / 3600;
+            let iconId = value.weather[0].id;
+            if (index < 4) {
+              return (
+                <div key={index}>
+                  <div className="day-date">
+                    {days[date.getDay()]} {dayDate}
+                  </div>
+                  <div className="weather-icon">
+                    <WeatherIcon
+                      time={date}
+                      timezone={localTime}
+                      icon={iconId}
+                    />
+                  </div>
+                  <div className="temp-max">
+                    {Math.round(value.temp.max * 1.8 + 32)}°
+                  </div>
+                  <div className="temp-min">
+                    {Math.round(value.temp.min * 1.8 + 32)}°
+                  </div>
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
-      </div>
-    );
+      );
+    } else {
+      const apiKey = "21cf52b64168334a0b71f4d075758440";
+      let lon = props.info.lon;
+      let lat = props.info.lat;
+      console.log(lon);
+      console.log(lat);
+      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+      axios.get(apiUrl).then(handleRespone);
+      return (
+        <div className="WeatherForecast">
+          <div>
+            <i className="fa-solid fa-spinner fa-spin"></i>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

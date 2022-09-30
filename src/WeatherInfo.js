@@ -126,6 +126,7 @@ function WeatherInfo(props) {
         <WeatherForecast
           info={props.data.coordinates}
           timezone={props.data.timezone}
+          conversion={unit}
         />
       </div>
     );
@@ -238,6 +239,7 @@ function WeatherInfo(props) {
         <WeatherForecast
           info={props.data.coordinates}
           timezone={props.data.timezone}
+          conversion={unit}
         />
       </div>
     );
