@@ -22,6 +22,7 @@ function App(props) {
       country: respone.data.sys.country,
       time: new Date(respone.data.dt * 1000),
       timezone: respone.data.timezone / 3600,
+      coordinates: respone.data.coord,
     });
   }
   function search() {

@@ -9,6 +9,9 @@
   font-family: "Nunito", sans-serif;
   color: #707579;
 }
+.App h1 {
+  font-size: 28px;
+}
 .App .temp {
   line-height: 80%;
   color: #2d2d2d;
@@ -17,6 +20,7 @@
 .App li {
   list-style: none;
   padding-left: 30px;
+  font-size: 13px;
 }
 
 .App .units {
@@ -27,7 +31,7 @@
   font-weight: bold;
 }
 .App .weather-description {
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,12 +39,12 @@
   line-height: 20px;
 }
 .App i {
-  margin: 40px auto;
-  color: #707579;
-  font-size: 100px;
+  margin: 30px auto;
+  color: #2d2d2d;
+  font-size: 50px;
 }
 .App .description-icon {
-  height: 140px;
+  height: 90px;
 }
 .App .symbol {
   text-decoration: none;

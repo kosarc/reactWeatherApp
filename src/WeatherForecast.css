@@ -1,0 +1,26 @@
+.WeatherForecast {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.WeatherForecast .weather-icon i {
+  font-size: 18px;
+  margin: 5px auto 0;
+  color: #2d2d2d;
+}
+.WeatherForecast .temp-max,
+.temp-min {
+  font-size: 26px;
+  height: 28px;
+  line-height: 28px;
+}
+.temp-min {
+  opacity: 0.7;
+}
+.WeatherForecast .day-date {
+  font-weight: 600;
+  font-size: 16px;
+}

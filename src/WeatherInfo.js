@@ -1,6 +1,7 @@
 import WeatherIcon from "./WeatherIcon";
 import React, { useState } from "react";
 import Time from "./Time";
+import WeatherForecast from "./weatherForecast";
 
 function WeatherInfo(props) {
   const [unit, setUnit] = useState("celsius");
@@ -122,6 +123,10 @@ function WeatherInfo(props) {
             </div>
           </div>
         </div>
+        <WeatherForecast
+          info={props.data.coordinates}
+          timezone={props.data.timezone}
+        />
       </div>
     );
   } else {
@@ -230,6 +235,10 @@ function WeatherInfo(props) {
             </div>
           </div>
         </div>
+        <WeatherForecast
+          info={props.data.coordinates}
+          timezone={props.data.timezone}
+        />
       </div>
     );
   }

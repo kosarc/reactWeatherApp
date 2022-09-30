@@ -3,19 +3,9 @@ function WeatherIcon(props) {
     5 < props.time.getUTCHours() + props.timezone &&
     props.time.getUTCHours() + props.timezone < 20
   )
-    return (
-      <i
-        className={`wi wi-owm-day-${props.icon}`}
-        style={{ fontSize: "65px" }}
-      ></i>
-    );
+    return <i className={`wi wi-owm-day-${props.icon}`}></i>;
   else {
-    return (
-      <i
-        className={`wi wi-owm-night-${props.icon}`}
-        style={{ fontSize: "65px" }}
-      ></i>
-    );
+    return <i className={`wi wi-owm-night-${props.icon}`}></i>;
   }
 }
 
