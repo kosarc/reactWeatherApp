@@ -7,16 +7,15 @@ import App from "./App";
 function NightDayMode() {
   const [check, setCheck] = useState(null);
   const [click, setClick] = useState({
-    appBackground: "app",
-    temperature: "app",
-    weatherIcon: "app",
-    forecastIcon: "app",
-    button: "app",
+    appBackground: null,
+    temperature: null,
+    weatherIcon: null,
+    forecastIcon: null,
+    button: null,
   });
 
   let time = new Date();
   let hours = time.getHours();
-  console.log(hours);
   function switcher() {
     if (hours > 6 && hours > 20) {
       setClick({
@@ -36,7 +35,7 @@ function NightDayMode() {
   }, []);
 
   function handleClick() {
-    if (click.appBackground === "app") {
+    if (click.appBackground === null) {
       return setClick({
         appBackground: "night-mode-app",
         temperature: "night-mode-temp",
@@ -46,11 +45,11 @@ function NightDayMode() {
       });
     } else {
       return setClick({
-        appBackground: "app",
-        temperature: "app",
-        weatherIcon: "app",
-        forecastIcon: "app",
-        button: "app",
+        appBackground: null,
+        temperature: null,
+        weatherIcon: null,
+        forecastIcon: null,
+        button: null,
       });
     }
   }

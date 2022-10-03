@@ -1,5 +1,4 @@
 function WeatherIcon(props) {
-  console.log(props.main);
   if (
     5 < props.time.getUTCHours() + props.timezone &&
     props.time.getUTCHours() + props.timezone < 20
