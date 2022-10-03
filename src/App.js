@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import "./weather-icons.min.css";
@@ -42,8 +42,9 @@ function App(props) {
   }
 
   if (weatherData.ready) {
+    console.log(props.mode.button);
     return (
-      <div className="App">
+      <div className={`App ${props.mode.appBackground}`}>
         <div className="container mt-3">
           <form onSubmit={handleSubmit}>
             <div className="row">
@@ -51,7 +52,7 @@ function App(props) {
                 <input
                   type="search"
                   placeholder="Type a city..."
-                  className="form-control"
+                  className="form-control search-line"
                   autoFocus="autofocus"
                   onChange={handleChange}
                 />
@@ -60,12 +61,12 @@ function App(props) {
                 <input
                   type="submit"
                   value="Search"
-                  className="btn btn-primary w-100"
+                  className={`btn btn-primary w-100 ${props.mode.button}`}
                 />
               </div>
             </div>
           </form>
-          <WeatherInfo data={weatherData} />
+          <WeatherInfo data={weatherData} info={props.mode} />
         </div>
       </div>
     );

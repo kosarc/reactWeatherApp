@@ -15,7 +15,6 @@ function WeatherForecast(props) {
   function handleRespone(respone) {
     setTemp(respone.data.daily);
     setReady(true);
-    console.log(respone);
   }
 
   if (ready && props.conversion === "celsius") {
@@ -35,7 +34,7 @@ function WeatherForecast(props) {
                 <div className="day-date">
                   {days[date.getDay()]} {dayDate}
                 </div>
-                <div className="weather-icon">
+                <div className={`weather-icon`}>
                   <WeatherIcon time={date} timezone={localTime} icon={iconId} />
                 </div>
                 <div className="temp-max">{Math.round(value.temp.max)}°</div>
@@ -66,7 +65,7 @@ function WeatherForecast(props) {
                   <div className="day-date">
                     {days[date.getDay()]} {dayDate}
                   </div>
-                  <div className="weather-icon">
+                  <div className={`weather-icon`}>
                     <WeatherIcon
                       time={date}
                       timezone={localTime}
@@ -91,8 +90,6 @@ function WeatherForecast(props) {
       const apiKey = "21cf52b64168334a0b71f4d075758440";
       let lon = props.info.lon;
       let lat = props.info.lat;
-      console.log(lon);
-      console.log(lat);
       let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
       axios.get(apiUrl).then(handleRespone);
       return (

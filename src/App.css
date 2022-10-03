@@ -5,16 +5,22 @@
   max-width: 700px;
   display: block;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 5px;
   font-family: "Nunito", sans-serif;
   color: #707579;
-}
-.App h1 {
-  font-size: 28px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
 }
 .App .temp {
   line-height: 80%;
   color: #2d2d2d;
+}
+
+.App h1 {
+  font-size: 28px;
+}
+.App input .search-line {
+  background-color: transparent;
 }
 
 .App li {
@@ -49,4 +55,25 @@
 .App .symbol {
   text-decoration: none;
   color: #0d6efd;
+}
+div .night-mode-app {
+  background: linear-gradient(180deg, #777, #3a3a3a);
+  color: #a4a4a4;
+}
+.App div .night-mode-temp {
+  color: #ffff;
+}
+.night-mode-button {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #a4a4a4;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-hover-border-color: #ffff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: transparent;
+  --bs-btn-active-border-color: #ffff;
+}
+.App .night-mode-icon {
+  color: #ffff;
 }

@@ -32,7 +32,7 @@ function WeatherInfo(props) {
           <div className="col-sm-3 text-center">
             <div className="row">
               <div
-                className="col-10 col-sm-10 temp"
+                className={`col-10 col-sm-10 temp ${props.info.temperature}`}
                 style={{ fontSize: "120px" }}
               >
                 {Math.round(props.data.temperature)}
@@ -50,7 +50,7 @@ function WeatherInfo(props) {
                 <br />
                 <hr />
                 <span onClick={snowFahrenheit}>
-                  <a href="/" className="symbol">
+                  <a href="/" className={`symbol ${props.info.temperature}`}>
                     °{symbolF}
                   </a>
                 </span>
@@ -68,6 +68,7 @@ function WeatherInfo(props) {
                   icon={props.data.icon}
                   time={props.data.time}
                   timezone={props.data.timezone}
+                  main={props.info}
                 />
               </div>
             </div>
@@ -143,7 +144,7 @@ function WeatherInfo(props) {
           <div className="col-sm-3 text-center">
             <div className="row">
               <div
-                className="col-10 col-sm-10 temp"
+                className={`col-10 col-sm-10 temp ${props.info.temperature}`}
                 style={{ fontSize: "120px" }}
               >
                 {Math.round(props.data.temperature * 1.8 + 32)}
@@ -161,7 +162,7 @@ function WeatherInfo(props) {
                 <br />
                 <hr />
                 <span onClick={snowCelsius}>
-                  <a href="/" className="symbol">
+                  <a href="/" className={`symbol ${props.info.temperature}`}>
                     °{symbolF}
                   </a>
                 </span>
@@ -179,6 +180,7 @@ function WeatherInfo(props) {
                   icon={props.data.icon}
                   time={props.data.time}
                   timezone={props.data.timezone}
+                  main={props.info}
                 />
               </div>
             </div>
