@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import "./weather-icons.min.css";
@@ -42,7 +42,6 @@ function App(props) {
   }
 
   if (weatherData.ready) {
-    console.log(props.mode.button);
     return (
       <div className={`App ${props.mode.appBackground}`}>
         <div className="container mt-3">
