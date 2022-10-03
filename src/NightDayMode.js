@@ -18,7 +18,7 @@ function NightDayMode() {
   let hours = time.getHours();
   console.log(hours);
   function switcher() {
-    if (hours < 6 && hours > 20) {
+    if (hours > 6 && hours > 20) {
       setClick({
         appBackground: "night-mode-app",
         temperature: "night-mode-temp",
@@ -29,9 +29,10 @@ function NightDayMode() {
       setCheck("on");
     }
   }
-
+  // eslint-disable-next-line
   useEffect(() => {
     switcher();
+    // eslint-disable-next-line
   }, []);
 
   function handleClick() {
