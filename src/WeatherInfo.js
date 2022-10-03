@@ -128,6 +128,7 @@ function WeatherInfo(props) {
           info={props.data.coordinates}
           timezone={props.data.timezone}
           conversion={unit}
+          icon={props.info}
         />
       </div>
     );
@@ -242,6 +243,7 @@ function WeatherInfo(props) {
           info={props.data.coordinates}
           timezone={props.data.timezone}
           conversion={unit}
+          icon={props.info}
         />
       </div>
     );

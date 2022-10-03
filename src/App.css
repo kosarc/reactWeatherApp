@@ -75,5 +75,5 @@ div .night-mode-app {
   --bs-btn-active-border-color: #ffff;
 }
 .App .night-mode-icon {
-  color: #ffff;
+  color: #ffff !important;
 }

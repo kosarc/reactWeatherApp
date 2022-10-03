@@ -35,7 +35,12 @@ function WeatherForecast(props) {
                   {days[date.getDay()]} {dayDate}
                 </div>
                 <div className={`weather-icon`}>
-                  <WeatherIcon time={date} timezone={localTime} icon={iconId} />
+                  <WeatherIcon
+                    time={date}
+                    timezone={localTime}
+                    icon={iconId}
+                    main={props.icon}
+                  />
                 </div>
                 <div className="temp-max">{Math.round(value.temp.max)}°</div>
                 <div className="temp-min">{Math.round(value.temp.min)}°</div>
@@ -70,6 +75,7 @@ function WeatherForecast(props) {
                       time={date}
                       timezone={localTime}
                       icon={iconId}
+                      main={props.icon}
                     />
                   </div>
                   <div className="temp-max">
