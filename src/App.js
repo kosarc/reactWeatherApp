@@ -9,7 +9,6 @@ function App(props) {
   const [city, setCity] = useState(props.city);
 
   function handleRespone(respone) {
-    console.log(respone);
     setWeatherData({
       ready: true,
       temperature: respone.data.main.temp,
